@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Volleyball Scorer - Display</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scorer.js"></script>
+  <style>
+    body { background: #000; color: #fff; }
+    .score { font-size: 4rem; }
+    .timer { font-size: 3rem; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="scoreboard">
+    <div class="team">
+      <div id="teamANameDisp" class="team-name">Team A</div>
+      <div id="teamAScoreDisp" class="score">0</div>
+      <div id="timeoutADisp" class="timeout"></div>
+    </div>
+    <div class="team">
+      <div id="teamBNameDisp" class="team-name">Team B</div>
+      <div id="teamBScoreDisp" class="score">0</div>
+      <div id="timeoutBDisp" class="timeout"></div>
+    </div>
+  </div>
+  <div class="timer" id="mainTimerDisp">00:00</div>
+</div>
+</body>
+</html>

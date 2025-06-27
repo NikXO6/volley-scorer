@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Volleyball Scorer - Control</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="scorer.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>Control Screen</h1>
+  <div class="scoreboard">
+    <div class="team">
+      <input id="teamAName" type="text" value="Team A" onchange="setTeamNames(this.value, document.getElementById('teamBName').value)">
+      <div class="controls">
+        <button onclick="addScore('A',1)">+1</button>
+        <span id="teamAScoreDisp" class="score">0</span>
+        <button onclick="addScore('A',-1)">-1</button>
+      </div>
+      <button onclick="startTimeout('A')">Timeout A</button>
+      <div id="timeoutADisp" class="timeout"></div>
+    </div>
+    <div class="team">
+      <input id="teamBName" type="text" value="Team B" onchange="setTeamNames(document.getElementById('teamAName').value, this.value)">
+      <div class="controls">
+        <button onclick="addScore('B',1)">+1</button>
+        <span id="teamBScoreDisp" class="score">0</span>
+        <button onclick="addScore('B',-1)">-1</button>
+      </div>
+      <button onclick="startTimeout('B')">Timeout B</button>
+      <div id="timeoutBDisp" class="timeout"></div>
+    </div>
+  </div>
+  <div class="timer">
+    Main Timer: <span id="mainTimerDisp">00:00</span>
+  </div>
+  <div class="controls">
+    <input id="minutes" type="number" value="25" min="0">:
+    <input id="seconds" type="number" value="0" min="0" max="59">
+    <button onclick="resetTimer(parseInt(minutes.value)*60 + parseInt(seconds.value))">Set</button>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Pause</button>
+  </div>
+  <div class="controls">
+    Timeout Length (sec): <input id="timeoutLength" type="number" value="30" min="5" onchange="state.timeoutDuration=parseInt(this.value)">
+  </div>
+</div>
+</body>
+</html>
